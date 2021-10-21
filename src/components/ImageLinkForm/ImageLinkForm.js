@@ -1,6 +1,6 @@
 import React from 'react';
 import 'animate.css';
-import Tilt from 'react-tilt';
+
 
 
 const ImageLinkForm = () => {
@@ -15,9 +15,9 @@ const ImageLinkForm = () => {
                                 <input type="text" className="form-control center"/> 
                             </div>
                             <div className="col col-md-2">
-                                <Tilt className="Tilt">
-                                    <button className="btn btn-primary">Detect</button>
-                                </Tilt>
+                                
+                                <button className="btn btn-primary">Detect</button>
+                                
                             </div>
                         </div>
                     </div>
