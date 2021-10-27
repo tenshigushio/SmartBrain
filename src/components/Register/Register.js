@@ -46,43 +46,55 @@ class Register extends React.Component {
     /** RENDER **/
     render() {
         return(
-            <div className="p-3 animate__animated animate__backInUp">
-                <div className="card">
+            <div className="d-flex justify-content-center p-5 animate__animated animate__backInUp">
+                <div className="card w-50">
                     <div className="card-body">
-                        <fieldset id="sign_up">
-                            <legend>Register to Smart Brain</legend>
-                            <div>
-                                <label htmlFor="name">Name</label>
-                                <input type="text"
-                                        name="name"
-                                        id="name"
-                                        onChange={this.onNameChange}
+                        <form>
+                            <fieldset id="sign_up">
+                                <legend>Register to Smart Brain</legend>
+                                <div className="form-group row p-2">
+                                    <label htmlFor="name" className="col-sm-3 col-form-label">Name</label>
+                                    <div className="col-sm-9">
+                                        <input  className="form-control center"
+                                                type="text"
+                                                name="name"
+                                                id="name"
+                                                onChange={this.onNameChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-group row p-2">
+                                    <label htmlFor="email-address" className="col-sm-3 col-form-label">Email</label>
+                                    <div className="col-sm-9">
+                                        <input  className="form-control center"
+                                                type="email"
+                                                name="email-address"
+                                                id="email-address"
+                                                onChange={this.onEmailChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-group row p-2">
+                                    <label htmlFor="password" className="col-sm-3 col-form-label">Password</label>
+                                    <div className="col-sm-9">
+                                        <input  className="form-control center"
+                                                type="password"
+                                                name="password"
+                                                id="password"
+                                                onChange={this.onPasswordChange}
+                                        />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div className="d-flex justify-content-center p-3">
+                            <div className="d-flex justify-content-center p-3">
+                                <input  className="btn btn-primary"
+                                        onClick={this.onSubmitSignIn}
+                                        type="submit"
+                                        value= "Register"
                                 />
                             </div>
-                            <div className="">
-                                <label htmlFor="email-address">Email</label>
-                                <input type="email"
-                                        name="email-address"
-                                        id="email-address"
-                                        onChange={this.onEmailChange}
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="password">Password</label>
-                                <input type="password"
-                                        name="password"
-                                        id="password"
-                                        onChange={this.onPasswordChange}
-                                />
-                            </div>
-                        </fieldset>
-                        <div className="">
-                            <input
-                                onClick={this.onSubmitSignIn}
-                                className=""
-                                type="submit"
-                                value= "Register"
-                            />
                         </div>
                     </div>
                 </div>

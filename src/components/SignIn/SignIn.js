@@ -41,38 +41,47 @@ class SignIn extends React.Component {
     render() {
         const { onRouteChange } = this.props;
         return(
-            <div className="p-3 animate__animated animate__backInUp">
-                <div className="card">
+            <div className="d-flex justify-content-center p-5 animate__animated animate__backInUp">
+                <div className="card w-50">
                     <div className="card-body">
-                        <fieldset id="sign_up">
-                            <legend>Sign In to Smart Brain</legend>
-                            <div>
-                                <label htmlFor="email-address">Email</label>
-                                <input type="email"
-                                        name="email-address"
-                                        id="email-address"
-                                        onChange={this.onEmailChange}
+                        <form>
+                            <fieldset id="sign_up">
+                                <legend>Sign In to Smart Brain</legend>
+                                <div className="form-group row p-2">
+                                    <label htmlFor="email-address" className="col-sm-3 col-form-label">Email</label>
+                                    <div className="col-sm-9">
+                                        <input className="form-control center"
+                                                type="email"
+                                                name="email-address"
+                                                id="email-address"
+                                                onChange={this.onEmailChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-group row p-2">
+                                    <label htmlFor="password" className="col-sm-3 col-form-label">Password</label>
+                                    <div className="col-sm-9">
+                                        <input  className="form-control center"
+                                                type="password"
+                                                name="password"
+                                                id="password"
+                                                onChange={this.onPasswordChange}
+                                        />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div className="d-flex justify-content-center p-3">
+                            <div className="hvr-grow-rotate">
+                                <input className="btn btn-primary"
+                                    onClick={this.onSubmitSignIn}
+                                    type="submit"
+                                    value= "Sign In"
                                 />
                             </div>
-                            <div>
-                                <label htmlFor="password">Password</label>
-                                <input type="password"
-                                        name="password"
-                                        id="password"
-                                        onChange={this.onPasswordChange}
-                                />
-                            </div>
-                        </fieldset>
-                        <div className="">
-                            <input
-                                onClick={this.onSubmitSignIn}
-                                className=""
-                                type="submit"
-                                value= "Sign In"
-                            />
                         </div>
-                        <div className="">
-                         <p onClick={() => onRouteChange('register')} className="">Register</p>
+                        <div className="d-flex justify-content-center p-2">
+                            <p onClick={() => onRouteChange('register')} className="hvr-grow cursor-pointer"><u>Register</u></p>
                         </div>
                     </div>
                 </div>
