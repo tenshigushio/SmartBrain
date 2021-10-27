@@ -1,9 +1,10 @@
 import React from 'react';
 import 'animate.css';
+import 'hover.css';
 
 
 
-const ImageLinkForm = () => {
+const ImageLinkForm = ({onInputChange, onButtonSubmit}) => {
     return (
         <div className="p-3 animate__animated animate__backInUp">
             <div className="card">
@@ -12,17 +13,18 @@ const ImageLinkForm = () => {
                     <div className="container">
                         <div className="row p-3">
                             <div className="col col-md-10">
-                                <input type="text" className="form-control center"/> 
+                                <input type="text" className="form-control center" onChange={onInputChange}/> 
                             </div>
                             <div className="col col-md-2">
-                                
-                                <button className="btn btn-primary">Detect</button>
-                                
+                                <div className="hvr-grow-rotate">
+                                    <button className="btn btn-primary" onClick={onButtonSubmit} >Detect</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 }
